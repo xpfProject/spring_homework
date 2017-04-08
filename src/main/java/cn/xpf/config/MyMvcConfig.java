@@ -7,8 +7,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.*;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
-import org.springframework.web.servlet.view.JstlView;
 
 /**
  * Created by Administrator on 2017/3/2.
@@ -18,11 +16,17 @@ import org.springframework.web.servlet.view.JstlView;
 @ComponentScan("cn.xpf")
 public class MyMvcConfig extends WebMvcConfigurerAdapter {
 
+//    @Override
+//    public void addViewControllers(ViewControllerRegistry registry) {
+//        registry.addViewController("/").setViewName("/index");
+//        registry.addViewController("toUpload").setViewName("/viewer/upload");
+//    }
+
     @Override
-    public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/index").setViewName("/index");
-        registry.addViewController("toUpload").setViewName("/viewer/upload");
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+//        registry.addResourceHandler("/**").addResourceLocations("classPath:/templates/");
     }
+
 
     @Bean
     public MultipartResolver multipartResolver(){
@@ -31,26 +35,13 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
         return  multipartResolver;
     }
 
-    @Bean
-    public InternalResourceViewResolver viewResolver() {
-        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-        viewResolver.setPrefix("/");
-        viewResolver.setSuffix(".jsp");
-        viewResolver.setViewClass(JstlView.class);
-        return viewResolver;
-    }
-
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/**").addResourceLocations("classPath:/templates/");
-    }
-
-    @Bean
-    public DemoInterceptor demoInterceptor() {
-        return new DemoInterceptor();
-    }
-
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(demoInterceptor());
-    }
+//    @Bean
+//    public DemoInterceptor demoInterceptor() {
+//        return new DemoInterceptor();
+//    }
+//
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        registry.addInterceptor(demoInterceptor());
+//    }
 }

@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.example</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>spring_homework</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
@@ -25,12 +25,8 @@
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.outputEncoding>UTF-8</project.build.outputEncoding>
-		<!--web-->
-		<jsp.version>2.0</jsp.version>
-		<jstl.version>1.2</jstl.version>
-		<servlert.version>3.1.0</servlert.version>
 		<!--spring-->
-		<spring-framework.version>4.1.5.RELEASE</spring-framework.version>
+		<spring-framework.version>4.3.7.RELEASE</spring-framework.version>
 		<!--logging-->
 		<logback.version>1.0.13</logback.version>
 		<slf4j.version>1.7.5</slf4j.version>
@@ -52,6 +48,16 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
 		</dependency>
 
 		<!--mybatis-->
@@ -94,6 +100,13 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!--<dependency>-->
+			<!--<groupId>javax</groupId>-->
+			<!--<artifactId>javaee-api</artifactId>-->
+			<!--<version>7.0</version>-->
+			<!--<scope>provided</scope>-->
+		<!--</dependency>-->
+
 
 		<!--热部署-->
 		<dependency>
@@ -101,6 +114,9 @@
 			<artifactId>spring-boot-devtools</artifactId>
 			<optional>true</optional>
 		</dependency>
+
+
+
 
 	</dependencies>
 
